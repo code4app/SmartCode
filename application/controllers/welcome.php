@@ -1,13 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+require APPPATH . '/libraries/CUREST_Controller.php';
+
+class Welcome extends CUREST_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
 	}
 
-	function index()
+	function index_get()
 	{
         $db = $this->load->database('default', TRUE);
         $sql = 'SHOW DATABASES';

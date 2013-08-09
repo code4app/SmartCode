@@ -33,36 +33,29 @@
 
             <div class ="tab-content">
                 <div class="tab-pane active" id="php">
-                    <h3>database</h3>
-                    <select name="" id="php_select_database">
-                        <?php foreach ($database_list as $item): ?>
-                            <option value="<?php echo $item['Database']; ?>"><?php echo $item['Database']; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-
-                    <p></p>
-                    <h3>table</h3>
-                    <select name="" id="php_select_table">
-                    </select>
-                    <p></p>
-                    <a class="btn btn-success" id ="php_button">generate</a>
+                    <form action="api/table" method ="GET">
+                        <div class="form-group">
+                            <label class="control-label">database</label>
+                            <select name="database_name" id="php_select_database" class="form-control">
+                                <?php foreach ($database_list as $item): ?>
+                                    <option value="<?php echo $item['Database']; ?>"><?php echo $item['Database']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">table</label>
+                            <select name="database_table" id="php_select_table" class="form-control"></select>
+                        </div>
+                        <button type="submit" class="btn btn-success">generate</button>
+                    </form>
                 </div>
 
                 <div class="tab-pane" id="obj-c">
-                    <select name="plan_id" id="selectPlanId2" onchange="evaluation_change()">  
+                    <select name="plan_id" id="selectPlanId2">  
                         <option value="2">健身</option>   
                         <option value="1">英语</option>
                         <option value="3">测试3</option>  
                     </select>
-                    <div id ="evaluation_box">
-
-                    </div>
-                </div>
-
-                <div class="tab-pane" id="chart">
-                    <p><font style="color:rgb(220,220,220)">健身(分钟)</font></p>
-                    <p><font style="color:rgb(151,187,205)">听写(分钟)</font></p>
-                    <canvas id="canvas" height="450" width="2000"></canvas>
                 </div>
             </div>
         </div>
