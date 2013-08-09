@@ -5,24 +5,10 @@
         <?php include 'nav.php'; ?>
         <div class ="container">
             <div>
-                <textarea id="p_table_view_content" class="span12">
+                <textarea id="p_table_view_content" class="span12" rows="40">
                     <?php
-                    $result = $data;
-
-                    $html = '';
-                    $arrayText = '';
-                    foreach ($result as $item)
-                    {
-                        $arrayText .= '$' . $item['Field'] . ",";
-                    }
-
-                    $array = "array( $arrayText );";
-                    $html .= $array;
-
-                    $html.= "\n";
-                    $html.= 'asdf';
-
-                    echo $html;
+                    include 'generate_php.php';
+                    gen_gets($data);
                     ?>
                 </textarea>
             </div>
