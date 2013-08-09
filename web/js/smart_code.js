@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $('#php_select_database').change(fill_select_table);
-    
+
     fill_select_table();
 
 });

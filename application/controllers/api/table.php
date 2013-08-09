@@ -30,21 +30,8 @@ class Table extends CUREST_Controller
             $result[] = $item;
         }
         
-        $html = null;
-        $arrayText = '';
-        foreach ($result as $item)
-        {
-            $arrayText .= '$'.$item['Field'].",";
-        }
-        
-        $array = "array( $arrayText )";
-        $html .= $array;
-        
-        $html .= '<br>';
-        
-        
-        
-        echo $html;
+        $this->load->helper('url');
+		$this->load->view('table_view', array('data' => $result));
     }
 
     
