@@ -5,8 +5,8 @@
         <?php include 'nav.php'; ?>
         <div class ="container">
             <ul class="nav nav-tabs" id = 'myTab'>
-                <li class="active"><a href="#php" data-toggle="tab">php</a></li>
-                <li><a href="#obj-c" data-toggle="tab">Objective-C</a></li>
+                <li class="active"><a href="#php" data-toggle="tab">PHP数据库自动生成参数类</a></li>
+                <li><a href="#php_param" data-toggle="tab">PHP 函数参数</a></li>
             </ul>
 
             <div class ="tab-content">
@@ -24,16 +24,22 @@
                             <label class="control-label">table</label>
                             <select name="database_table" id="php_select_table" class="form-control"></select>
                         </div>
-                        <button type="submit" class="btn btn-success">generate</button>
+                        <div><button type="submit" class="btn btn-success">generate</button></div>
                     </form>
                 </div>
 
-                <div class="tab-pane" id="obj-c">
-                    <select name="plan_id" id="selectPlanId2">  
-                        <option value="2">健身</option>   
-                        <option value="1">英语</option>
-                        <option value="3">测试3</option>  
-                    </select>
+                <div class="tab-pane" id="php_param">
+                    <form action="api/table/param" method ="POST">
+                        <div class="form-group">
+                            <select name="php_param_method" id="php_param_select" class="form-control">
+                                <option value="get">GET</option>
+                                <option value="post">POST</option>
+                            </select>
+                            <label class="control-label">输入参数，分号分割</label>
+                            <textarea class="span12" name="params"></textarea>
+                        </div>
+                        <div><button class="btn btn-success">generate</button></div>
+                    </form>
                 </div>
             </div>
         </div>
